@@ -8,9 +8,9 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class PanelProceso extends JPanel {
-    private JButton btnCalcular;
-    private JButton btnBorrar;
-    private JButton btnSalir;
+    public JButton btnCalcular;
+    public JButton btnBorrar;
+    public JButton btnSalir;
 
     public PanelProceso() {
         this.setLayout(null);
@@ -23,6 +23,7 @@ public class PanelProceso extends JPanel {
         btnCalcular.setBackground(Color.WHITE);
         btnCalcular.setBorder(BorderFactory.createRaisedBevelBorder());
         btnCalcular.setBounds(58, 22, 95, 40);
+        btnCalcular.setActionCommand("calcularMayor");
         this.add(btnCalcular);
 
         btnBorrar = new JButton("Borrar");
@@ -31,6 +32,7 @@ public class PanelProceso extends JPanel {
         btnBorrar.setBackground(Color.WHITE);
         btnBorrar.setBorder(BorderFactory.createRaisedBevelBorder());
         btnBorrar.setBounds(193, 22, 95, 40);
+        btnBorrar.setActionCommand("borrarLbs");
         this.add(btnBorrar);
 
         btnSalir = new JButton("Salir");
@@ -39,6 +41,7 @@ public class PanelProceso extends JPanel {
         btnSalir.setBackground(Color.WHITE);
         btnSalir.setBorder(BorderFactory.createRaisedBevelBorder());
         btnSalir.setBounds(330, 22, 95, 40);
+        btnSalir.setActionCommand("cerrarVentana");
         this.add(btnSalir);
     }
 }

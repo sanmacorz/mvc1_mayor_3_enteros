@@ -12,13 +12,14 @@ import java.awt.Font;
 
 public class PanelEntrada extends JPanel {
     private JLabel lbTitulo;
-    private JLabel lbX;
-    private JLabel lbY;
-    private JLabel lbZ;
+    private static JLabel lbX;
+    private static JLabel lbY;
+    private static JLabel lbZ;
     private JLabel lbLogo;
-    private JTextField tfX;
-    private JTextField tfY;
-    private JTextField tfZ;
+    private static JTextField tfX;
+    private static JTextField tfY;
+    private static JTextField tfZ;
+    private ImageIcon iLogo;
 
     public PanelEntrada() {
         this.setLayout(null);
@@ -67,10 +68,34 @@ public class PanelEntrada extends JPanel {
         tfZ.setBounds(280, 135, 190, 30);
         this.add(tfZ);
 
-        lbLogo = new JLabel(new ImageIcon("imgs/uis.png"));
+        iLogo = new ImageIcon("imgs/uis.png");
+        lbLogo = new JLabel(iLogo);
         lbLogo.setOpaque(true);
         lbLogo.setBorder(BorderFactory.createRaisedBevelBorder());
         lbLogo.setBounds(20, 60, 192, 96);
         this.add(lbLogo);
+    }
+
+    public static String getLbX() {
+        return tfX.getText();
+    }
+
+    public static String getLbY() {
+        return tfY.getText();
+    }
+
+    public static String getLbZ() {
+        return tfZ.getText();
+    }
+
+    public static void borrarLbs() {
+        tfX.setText("");
+        tfY.setText("");
+        tfZ.setText("");
+        PanelSalida.taResultados.setText("");
+    }
+
+    public static void cerrarVentana() {
+        System.exit(0);
     }
 }

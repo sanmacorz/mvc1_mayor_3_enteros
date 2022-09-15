@@ -3,12 +3,14 @@ package view;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 import java.awt.Color;
 import java.awt.Font;
 
 public class PanelSalida extends JPanel {
-    private JTextArea taResultados;
+    public static JTextArea taResultados;
+    public static JScrollPane spResultados;
 
     public PanelSalida() {
         this.setLayout(null);
@@ -21,6 +23,9 @@ public class PanelSalida extends JPanel {
         taResultados.setBorder(BorderFactory.createLoweredBevelBorder());
         taResultados.setEditable(false);
         taResultados.setBounds(9, 15, 460, 80);
-        this.add(taResultados);
+
+        spResultados = new JScrollPane(taResultados);
+        spResultados.setBounds(9, 15, 460, 80);
+        this.add(spResultados);
     }
 }
