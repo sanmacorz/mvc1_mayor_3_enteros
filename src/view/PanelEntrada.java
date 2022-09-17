@@ -3,6 +3,7 @@ package view;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -76,19 +77,21 @@ public class PanelEntrada extends JPanel {
         this.add(lbLogo);
     }
 
-    public static String getLbX() {
+    public static String getTfX() {
         return tfX.getText();
     }
 
-    public static String getLbY() {
+    public static String getTfY() {
         return tfY.getText();
     }
 
-    public static String getLbZ() {
+    public static String getTfZ() {
         return tfZ.getText();
     }
 
     public static void borrarLbs() {
+        JOptionPane.showMessageDialog(null, "Los datos serán borrados...", "Suma 3 Enteros",
+                JOptionPane.WARNING_MESSAGE);
         tfX.setText("");
         tfY.setText("");
         tfZ.setText("");
@@ -96,6 +99,7 @@ public class PanelEntrada extends JPanel {
     }
 
     public static void cerrarVentana() {
+        JOptionPane.showMessageDialog(null, "El programa se cerrará...", "Suma 3 Enteros", JOptionPane.WARNING_MESSAGE);
         System.exit(0);
     }
 }
