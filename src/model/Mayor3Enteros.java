@@ -1,28 +1,42 @@
+// Define al paquete apropiado
 package model;
 
-import javax.swing.JOptionPane;
-
+// Crea la clase Mayor3Enteros
 public class Mayor3Enteros {
-    public static void calcularMayor() {
-        try {
-            int x = Integer.parseInt(view.PanelEntrada.getTfX());
-            int y = Integer.parseInt(view.PanelEntrada.getTfY());
-            int z = Integer.parseInt(view.PanelEntrada.getTfZ());
-            int mayor = 0;
+    // Declara las variables x, y, z como privadas
+    private int x;
+    private int y;
+    private int z;
+    private int mayor;
 
-            if (x > y && x > z) {
-                mayor = x;
-            } else if (y > x && y > z) {
-                mayor = y;
-            } else {
-                mayor = z;
-            }
+    // Crea el setter para la variable x
+    public void setX(int x) {
+        this.x = x;
+    }
 
-            view.PanelSalida.taResultados.append("El mayor es " + mayor + "!" + "\n");
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Datos incorrectos.\nLos datos deben ser enteros!", "Suma 3 Enteros",
-                    JOptionPane.ERROR_MESSAGE);
-            view.PanelEntrada.borrarLbs();
+    // Crea el setter para la variable y
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    // Crea el setter para la variable z
+    public void setZ(int z) {
+        this.z = z;
+    }
+
+    // Crea el getter para la variable mayor
+    public int getMayor() {
+        return mayor;
+    }
+
+    // Crea el método hallarMayor con UNICAMENTE el algoritmo a seguir
+    public void hallarMayor() {
+        if (x > y && x > z) {
+            mayor = x;
+        } else if (y > x && y > z) {
+            mayor = y;
+        } else {
+            mayor = z;
         }
     }
 }
